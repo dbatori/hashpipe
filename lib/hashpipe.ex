@@ -1,0 +1,2 @@
+defmodule HashPipe do
+end
