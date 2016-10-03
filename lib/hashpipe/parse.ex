@@ -1,5 +1,14 @@
 defmodule HashPipe.Parse do
 
+  @moduledoc """
+  This Module contains parser functions.
+  """
+
+  @doc """
+  Parses the contents of `path` and returns a list of `{line_num, test}`
+  tuples, where `test` is a `HashPipe` test starting at line number `line_num`.
+  Tests are padded with a leading `indent` and all beginning `#|`s are removed.
+  """
   def file(path, indent) do
     path
     |> File.stream!
