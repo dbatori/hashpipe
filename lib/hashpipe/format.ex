@@ -1,5 +1,19 @@
 defmodule HashPipe.Format do
 
+  @moduledoc """
+  Functions related to formatting.
+  """
+
+  @doc """
+  Returns test results as a formatted string based on the `tests` and the
+  `file` and `module` (which contain the tests).
+
+  If ANSI coloring is enabled, return value also contains ANSI color codes.
+
+  `tests` is a list of `[line_num, test, result]` lists, where `test` is a
+  `HashPipe` test starting at line number `line_num` and `result` is its
+  evaluated value.
+  """
   def results(tests, file, module) do
     fails = Enum.filter tests, fn [_, _, result] -> result != true end
     num_fails = length(fails)
