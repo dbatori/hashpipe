@@ -1,5 +1,7 @@
 defmodule HashPipe do
 
+  @moduledoc HashPipe.Format.main_moduledoc
+
   @doc false
   defmacro __using__(_opts) do
     quote do
@@ -8,6 +10,11 @@ defmodule HashPipe do
     end
   end
 
+  @doc """
+  Checks test results.
+
+  Currently just prints them as formatted by `HashPipe.Format.results/3`.
+  """
   def check(tests, file, module) do
     IO.puts HashPipe.Format.results(tests, file, module)
   end

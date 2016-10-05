@@ -45,4 +45,13 @@ defmodule HashPipe.Format do
     end
   end
 
+  @doc false
+  def main_moduledoc do
+    "../../README.md"
+    |> Path.expand(__DIR__)
+    |> File.stream!
+    |> Stream.drop(2)
+    |> Enum.join
+  end
+
 end
