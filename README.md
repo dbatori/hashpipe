@@ -6,24 +6,24 @@
 
 ## Installation
 
-  1. Add `hashpipe` to your list of dependencies in `mix.exs`:
+Add `hashpipe` to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [{:hashpipe, "~> 0.1.0"}]
-    end
-    ```
+```elixir
+def deps do
+  [{:hashpipe, "~> 0.1.0"}]
+end
+```
 
-  2. Ensure `hashpipe` is started before your application:
+Ensure `hashpipe` is started before your application:
 
-    ```elixir
-    def application do
-      [applications: [:hashpipe]]
-    end
-    ```
+```elixir
+def application do
+  [applications: [:hashpipe]]
+end
+```
 
-  3. Update your dependencies:
+Update your dependencies:
 
-    ```sh-session
-    $ mix deps.get
-    ```
+```sh-session
+$ mix deps.get
+```
