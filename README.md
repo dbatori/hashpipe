@@ -113,5 +113,38 @@ Compile the project again and check the output:
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/19773293/19279025/d87cabf2-8fdf-11e6-843c-1def5d16a7f3.png)
 
-Note that a `HashPipe` test succeeds if it returns true and fails otherwise.
-If it fails, its return value is printed after the test.
+**Note that a `HashPipe` test succeeds if it returns true and fails otherwise.
+If it fails, its return value is printed after the test.**
+
+You can also `use HashPipe` to check return values of private functions or (almost) any Elixir expressions:
+
+```elixir
+defmodule MyApp.MyModule do
+
+  use HashPipe
+
+  #| emphasize("elixir")
+
+  defp emphasize(word) do
+    word
+    |> String.upcase
+    |> String.graphemes
+    |> Enum.intersperse(" ")
+    |> Enum.join
+  end
+
+  #| highlight("Chuck Norris can access private methods.", "private")
+
+  defp highlight(text, word) do
+    String.replace(text, word, emphasize(word))
+  end
+
+  #| 1..9
+  #| |> Enum.map(&String.duplicate("|", 5 - abs(&1 - 5)))
+  #| |> Enum.join("  ")
+
+end
+```
+Compile it and you will get something like this:
+
+![Screenshot](https://cloud.githubusercontent.com/assets/19773293/19325639/5b9e1966-90c7-11e6-9c39-94d8d614ed51.png)
