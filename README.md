@@ -1,7 +1,5 @@
 # HashPipe
 
-> **Work in progress - This project is *NOT* yet published to Hex**
-
 ***HashPipe* is a minimalist testing and code documentation tool for Elixir.**
 
 ## Installation
