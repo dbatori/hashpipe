@@ -5,12 +5,14 @@ defmodule HashPipe.Mixfile do
     [app: :hashpipe,
      version: "0.1.0",
      elixir: "~> 1.3",
+     description: "Minimalist testing and code documentation tool for Elixir",
+     package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps(),
      name: "HashPipe",
      source_url: "https://github.com/dbatori/hashpipe",
-     docs: [extras: ["README.md"]]]
+     docs: [main: "HashPipe"]]
   end
 
   # Configuration for the OTP application
@@ -32,4 +34,12 @@ defmodule HashPipe.Mixfile do
   defp deps do
     [{:ex_doc, "~> 0.14", only: :dev}]
   end
+  
+  defp package do
+    [name: :hashpipe,
+     maintainers: ["Daniel Batori"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/dbatori/hashpipe"}]
+  end
+  
 end
