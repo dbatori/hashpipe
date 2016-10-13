@@ -113,7 +113,7 @@ Compile the project again and check the output:
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/19773293/19279025/d87cabf2-8fdf-11e6-843c-1def5d16a7f3.png)
 
-**Note that a `HashPipe` test succeeds if it returns true and fails otherwise.
+**Note that a `HashPipe` test succeeds if it returns `true` and fails otherwise.
 If it fails, its return value is printed after the test.**
 
 You can also `use HashPipe` to check return values of private functions or (almost) any Elixir expressions:
@@ -148,3 +148,9 @@ end
 Compile it and you will get something like this:
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/19773293/19325639/5b9e1966-90c7-11e6-9c39-94d8d614ed51.png)
+
+## Limitations
+
+* `HashPipe` tests can't see each other's bounded variables
+* `HashPipe` tests don't capture IO
+* If you got multiple modules in a file, you can `use HashPipe` in just one of them (currently)
