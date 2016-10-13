@@ -1,5 +1,7 @@
 # HashPipe
 
+[![Hex.pm](https://img.shields.io/hexpm/v/hashpipe.svg)](https://hex.pm/packages/hashpipe)
+
 ***HashPipe* is a minimalist testing and code documentation tool for Elixir.**
 
 ## Installation
